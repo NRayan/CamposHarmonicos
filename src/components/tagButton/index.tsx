@@ -3,13 +3,20 @@ import { Container, Title } from "./styles";
 
 type Props =
 	{
-		title: string
+		title: string,
+		selected: boolean,
+		onPress: () => void
 	}
 
-export function TagButton({ title }: Props) {
+export function TagButton({ title, selected, onPress }: Props) {
+
+	function handleSelectedChanged() {
+		onPress();
+	}
+
 	return (
-		<Container>
-			<Title>{title}</Title>
+		<Container selected={selected} onPress={handleSelectedChanged}>
+			<Title selected={selected}>{title}</Title>
 		</Container>
 	);
 }

@@ -1,13 +1,20 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { FlatList, ScrollView, View } from "react-native";
+import React, { useState } from "react";
+import { FlatList } from "react-native";
 import { useTheme } from "styled-components/native";
 import { TagButton } from "../../components";
-import { Container, Title } from "./styles";
+import { Container, ScrollContainer, TagButtonsScrollView, Title } from "./styles";
+import { camposHarmonicos } from "../../data";
+
+const data = camposHarmonicos;
 
 export function Home() {
 
 	const theme = useTheme();
+
+	const [maioresSelected, setMaioresSelected] = useState(true);
+	const [menoresSelected, setMenoresSelected] = useState(true);
+	const [sustenidosSelected, setSustenidosSelected] = useState(true);
 
 	return (
 		<>
@@ -16,15 +23,15 @@ export function Home() {
 			<Container>
 				<Title style={{ color: "white" }}>Campos{"\n"}harmônicos</Title>
 
-				<View>
-					<ScrollView horizontal showsHorizontalScrollIndicator={false}>
-						<TagButton title="Maiores" />
-						<TagButton title="Menores" />
-						<TagButton title="Sustenidos" />
-					</ScrollView>
-				</View>
+				<ScrollContainer>
+					<TagButtonsScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingLeft: theme.paddings.horizontal }}>
+						<TagButton title="maiores" selected={maioresSelected} onPress={() => { setMaioresSelected(!maioresSelected); }} />
+						<TagButton title="menores" selected={menoresSelected} onPress={() => { setMenoresSelected(!menoresSelected); }} />
+						<TagButton title="sustenidos" selected={sustenidosSelected} onPress={() => { setSustenidosSelected(!sustenidosSelected); }} />
+					</TagButtonsScrollView>
+				</ScrollContainer>
 
-				<FlatList data={[]} renderItem={() => (<View />)}>
+				<FlatList data={data} renderItem={() => (<></>)}>
 
 				</FlatList>
 
