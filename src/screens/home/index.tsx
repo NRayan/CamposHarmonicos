@@ -1,12 +1,14 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FlatList } from "react-native";
 import { useTheme } from "styled-components/native";
 import { TagButton } from "../../components";
-import { Container, ScrollContainer, TagButtonsScrollView, Title } from "./styles";
+import { ChordButton } from "../../components/chordButton";
 import { camposHarmonicos } from "../../data";
+import { CampoHarmonico } from "../../types";
+import { Container, ScrollContainer, TagButtonsScrollView, Title } from "./styles";
 
-const data = camposHarmonicos;
+const allData: CampoHarmonico[] = camposHarmonicos;
 
 export function Home() {
 
@@ -16,12 +18,33 @@ export function Home() {
 	const [menoresSelected, setMenoresSelected] = useState(true);
 	const [sustenidosSelected, setSustenidosSelected] = useState(true);
 
+	useEffect(loadData, [maioresSelected, menoresSelected, sustenidosSelected]);
+
+	function loadData() {
+
+		let campos: CampoHarmonico[] = allData;
+
+		if (!maioresSelected)
+			campos = campos.filter(x => !x.tom.maior);
+
+		if (!menoresSelected)
+			campos = campos.filter(x => x.tom.maior);
+
+		if (!sustenidosSelected)
+			campos = campos.filter(x => !x.tom.sustenido);
+
+		setData(campos);
+
+	}
+
+	const [data, setData] = useState<CampoHarmonico[]>([]);
+
 	return (
 		<>
 			<StatusBar style="light" translucent={false} backgroundColor={theme.colors.background} />
 
 			<Container>
-				<Title style={{ color: "white" }}>Campos{"\n"}harmônicos</Title>
+				<Title>Campos{"\n"}harmônicos</Title>
 
 				<ScrollContainer>
 					<TagButtonsScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingLeft: theme.paddings.horizontal }}>
@@ -31,9 +54,12 @@ export function Home() {
 					</TagButtonsScrollView>
 				</ScrollContainer>
 
-				<FlatList data={data} renderItem={() => (<></>)}>
-
-				</FlatList>
+				<FlatList
+					contentContainerStyle={{ alignItems: "center" }}
+					numColumns={2}
+					data={data}
+					renderItem={({ item }) => (<ChordButton campoHarmonico={item} />)}
+				/>
 
 			</Container>
 
