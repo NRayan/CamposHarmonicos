@@ -1,7 +1,7 @@
 import { Inter_400Regular, Inter_500Medium, Inter_600SemiBold, Inter_700Bold, useFonts } from "@expo-google-fonts/inter";
 import AppLoading from "expo-app-loading";
 import { ThemeProvider } from "styled-components/native";
-import { Home } from "./src/screens/home";
+import { Routes } from "./src/routes";
 import { theme } from "./src/theme";
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Home />
+			<Routes />
 		</ThemeProvider>
 	);
 }

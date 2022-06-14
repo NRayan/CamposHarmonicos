@@ -34,29 +34,24 @@ export function Home() {
 	const [data, setData] = useState<CampoHarmonico[]>([]);
 
 	return (
-		<>
-			<StatusBar style="light" translucent={false} backgroundColor={theme.colors.background} />
+		<Container>
+			<Title>Campos{"\n"}harmônicos</Title>
 
-			<Container>
-				<Title>Campos{"\n"}harmônicos</Title>
+			<ScrollContainer>
+				<TagButtonsScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingLeft: theme.paddings.horizontal }}>
+					<TagButton title="maiores" selected={maioresSelected} onPress={() => { setMaioresSelected(!maioresSelected); }} />
+					<TagButton title="menores" selected={menoresSelected} onPress={() => { setMenoresSelected(!menoresSelected); }} />
+					<TagButton title="sustenidos" selected={sustenidosSelected} onPress={() => { setSustenidosSelected(!sustenidosSelected); }} />
+				</TagButtonsScrollView>
+			</ScrollContainer>
 
-				<ScrollContainer>
-					<TagButtonsScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingLeft: theme.paddings.horizontal }}>
-						<TagButton title="maiores" selected={maioresSelected} onPress={() => { setMaioresSelected(!maioresSelected); }} />
-						<TagButton title="menores" selected={menoresSelected} onPress={() => { setMenoresSelected(!menoresSelected); }} />
-						<TagButton title="sustenidos" selected={sustenidosSelected} onPress={() => { setSustenidosSelected(!sustenidosSelected); }} />
-					</TagButtonsScrollView>
-				</ScrollContainer>
+			<FlatList
+				contentContainerStyle={{ alignItems: "center" }}
+				numColumns={2}
+				data={data}
+				renderItem={({ item }) => (<ChordButton campoHarmonico={item} />)}
+			/>
 
-				<FlatList
-					contentContainerStyle={{ alignItems: "center" }}
-					numColumns={2}
-					data={data}
-					renderItem={({ item }) => (<ChordButton campoHarmonico={item} />)}
-				/>
-
-			</Container>
-
-		</>
+		</Container>
 	);
 }
