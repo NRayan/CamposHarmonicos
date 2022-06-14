@@ -1,13 +1,26 @@
 import React from "react";
-import { Container } from "./styles";
+import { BackButton } from "../../components";
+import { CampoHarmonico } from "../../types";
+import { Chords, Container, ToneContainer, ToneLabel, ToneText, ToneTextContainer } from "./styles";
 
 export function Details({ route }) {
 
-	const campo = route.params;
+	const campo: CampoHarmonico = route.params;
 
-	console.log(campo);
 	return (
 		<Container>
+
+			<BackButton />
+
+			<ToneContainer>
+				<ToneLabel>Tom</ToneLabel>
+				<ToneTextContainer>
+					<ToneText>{campo.tom.sigla}</ToneText>
+				</ToneTextContainer>
+			</ToneContainer>
+
+			<Chords>acordes</Chords>
+
 
 		</Container>
 	);

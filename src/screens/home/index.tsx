@@ -1,9 +1,7 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import { FlatList } from "react-native";
 import { useTheme } from "styled-components/native";
-import { TagButton } from "../../components";
-import { ChordButton } from "../../components/chordButton";
+import { ChordButton, TagButton } from "../../components";
 import { camposHarmonicos } from "../../data";
 import { CampoHarmonico } from "../../types";
 import { Container, ScrollContainer, TagButtonsScrollView, Title } from "./styles";
