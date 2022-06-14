@@ -1,14 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1654896593234" clover="3.2.0">
-  <project timestamp="1654896593234" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="2" classes="2"/>
-    <file name="index.tsx" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\components\tagButton\index.tsx">
+<coverage generated="1655216546014" clover="3.2.0">
+  <project timestamp="1655216546014" name="All files">
+    <metrics statements="22" coveredstatements="21" conditionals="6" coveredconditionals="3" methods="11" coveredmethods="10" elements="39" coveredelements="34" complexity="0" loc="22" ncloc="22" packages="5" files="10" classes="10"/>
+    <package name="components.chordButton">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="index.tsx" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\components\chordButton\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\components\chordButton\styles.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.tagButton">
+      <metrics statements="8" coveredstatements="7" conditionals="6" coveredconditionals="3" methods="6" coveredmethods="5"/>
+      <file name="index.tsx" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\components\tagButton\index.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\components\tagButton\styles.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="6" coveredconditionals="3" methods="4" coveredmethods="4"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="14" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="data">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="camposMaiores.ts" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\data\camposMaiores.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+      </file>
+      <file name="camposMenores.ts" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\data\camposMenores.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+      </file>
+      <file name="index.ts" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\data\index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="tests">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="11" count="1" type="stmt"/>
-    </file>
-    <file name="styles.ts" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\components\tagButton\styles.ts">
+      <file name="index.ts" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\tests\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="renderers.tsx" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\tests\renderers.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="theme">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <line num="3" count="1" type="stmt"/>
-    </file>
+      <file name="index.ts" path="C:\Users\Norton\Desktop\Projetos\CamposHarmonicos\src\theme\index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="20" count="2" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

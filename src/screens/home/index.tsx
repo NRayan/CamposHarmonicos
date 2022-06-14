@@ -24,17 +24,11 @@ export function Home() {
 
 		let campos: CampoHarmonico[] = allData;
 
-		if (!maioresSelected)
-			campos = campos.filter(x => !x.tom.maior);
-
-		if (!menoresSelected)
-			campos = campos.filter(x => x.tom.maior);
-
-		if (!sustenidosSelected)
-			campos = campos.filter(x => !x.tom.sustenido);
+		if (!maioresSelected) campos = campos.filter(x => !x.tom.maior);
+		if (!menoresSelected) campos = campos.filter(x => x.tom.maior);
+		if (!sustenidosSelected) campos = campos.filter(x => !x.tom.sustenido);
 
 		setData(campos);
-
 	}
 
 	const [data, setData] = useState<CampoHarmonico[]>([]);
