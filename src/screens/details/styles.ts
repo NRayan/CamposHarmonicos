@@ -36,7 +36,12 @@ color: ${({ theme }) => theme.colors.text};
 `;
 
 export const Chords = styled.Text`
-font-size: 18px;
+font-size: 16px;
 font-family: ${({ theme }) => theme.fonts[500]};
-color: ${({ theme }) => transparentize(.5, theme.colors.text)};  
+color: ${({ theme }) => transparentize(.5, theme.colors.text)};
+`;
+
+export const TagsContainer = styled.View`
+    flex-direction: row;
+    margin:5px 0
 `;

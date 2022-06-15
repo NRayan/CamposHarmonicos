@@ -4,6 +4,12 @@ export type ThemeProps = {
         primary: string,
         text: string
     },
+    fieldsColors:
+    {
+        primary: string,
+        secondary: string,
+        teriary: string
+    },
     fonts: {
         400: string,
         500: string,
@@ -22,6 +28,11 @@ export const theme: ThemeProps =
 		background: "#15151E",
 		primary: "#343434",
 		text: "#FFF"
+	},
+	fieldsColors: {
+		primary: "#14701D",
+		secondary: "#B00623",
+		teriary: "#B77716"
 	},
 	fonts: {
 		"400": "Inter_400Regular",
