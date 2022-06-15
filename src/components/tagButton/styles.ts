@@ -9,7 +9,7 @@ type buttonProps =
 export const Container = styled.TouchableOpacity.attrs({ activeOpacity: .9 }) <buttonProps>`
   border-radius: 100px;
   border:  1px solid ${({ theme, selected }) => selected ? theme.colors.background : transparentize(0.8, theme.colors.text)};
-  padding: 7px 25px;
+  padding: 10px 25px;
   margin-right: 10px;
   background-color: ${({ theme, selected }) => selected ? theme.colors.primary : theme.colors.background};
 `;

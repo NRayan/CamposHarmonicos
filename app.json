@@ -7,9 +7,9 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splashScreen.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1B222F"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,9 +22,16 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/adaptive.png",
+        "backgroundColor": "#1B222F"
+      },
+      "package": "com.nrayan.CamposHarmonicos"
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#1B222F",
+      "barStyle": "light-content",
+      "hidden": false,
+      "translucent": false
     },
     "web": {
       "favicon": "./assets/favicon.png"

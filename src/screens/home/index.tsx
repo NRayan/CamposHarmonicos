@@ -18,6 +18,14 @@ export function Home() {
 
 	useEffect(loadData, [maioresSelected, menoresSelected, sustenidosSelected]);
 
+	function handleTagPress(pressed: "maiores" | "menores") {
+		if (pressed === "maiores")
+			menoresSelected && setMaioresSelected(!maioresSelected);
+
+		if (pressed === "menores")
+			maioresSelected && setMenoresSelected(!menoresSelected);
+	}
+
 	function loadData() {
 
 		let campos: CampoHarmonico[] = allData;
@@ -37,9 +45,9 @@ export function Home() {
 
 			<ScrollContainer>
 				<TagButtonsScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingLeft: theme.paddings.horizontal }}>
-					<TagButton title="maiores" selected={maioresSelected} onPress={() => { setMaioresSelected(!maioresSelected); }} />
-					<TagButton title="menores" selected={menoresSelected} onPress={() => { setMenoresSelected(!menoresSelected); }} />
-					<TagButton title="sustenidos" selected={sustenidosSelected} onPress={() => { setSustenidosSelected(!sustenidosSelected); }} />
+					<TagButton title="maiores" selected={maioresSelected} onPress={() => handleTagPress("maiores")} />
+					<TagButton title="menores" selected={menoresSelected} onPress={() => handleTagPress("menores")} />
+					<TagButton title="sustenidos" selected={sustenidosSelected} onPress={() => setSustenidosSelected(!sustenidosSelected)} />
 				</TagButtonsScrollView>
 			</ScrollContainer>
 

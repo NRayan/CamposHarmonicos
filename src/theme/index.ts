@@ -25,8 +25,8 @@ export type ThemeProps = {
 export const theme: ThemeProps =
 {
 	colors: {
-		background: "#15151E",
-		primary: "#343434",
+		background: "#1B222F",
+		primary: "#1E4DD6",
 		text: "#FFF"
 	},
 	fieldsColors: {
@@ -42,6 +42,6 @@ export const theme: ThemeProps =
 	},
 	paddings: {
 		horizontal: "5%",
-		vertical: "5%"
+		vertical: "8%"
 	}
 };
