@@ -5,7 +5,14 @@ import React from "react";
 import { useTheme } from "styled-components/native";
 import { Container, Title } from "./styles";
 
-export function BackButton() {
+type Props =
+	{
+		title: string,
+		applyPadding?:boolean
+	}
+
+export function BackButton({ title,applyPadding }: Props) {
+
 	const theme = useTheme();
 	const navigation = useNavigation();
 
@@ -14,9 +21,9 @@ export function BackButton() {
 	}
 
 	return (
-		<Container onPress={handlePress}>
-			<AntDesign name="left" color={transparentize(.3, theme.colors.text)} size={22} />
-			<Title>Detalhes</Title>
+		<Container applyPadding={applyPadding} onPress={handlePress} >
+			<AntDesign name="left" color={transparentize(.1, theme.colors.text)} size={22} />
+			<Title>{title}</Title>
 		</Container>
 	);
 }

@@ -12,7 +12,7 @@ export function Details({ route }) {
 	return (
 		<Container>
 
-			<BackButton />
+			<BackButton title="Detalhes"/>
 
 			<ToneContainer>
 				<ToneLabel>Tom</ToneLabel>

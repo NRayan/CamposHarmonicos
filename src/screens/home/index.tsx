@@ -1,20 +1,26 @@
+import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { transparentize } from "polished";
 import React, { useEffect, useState } from "react";
 import { FlatList } from "react-native";
 import { useTheme } from "styled-components/native";
 import { ChordButton, TagButton } from "../../components";
 import { camposHarmonicos } from "../../data";
 import { CampoHarmonico } from "../../types";
-import { Container, ScrollContainer, TagButtonsScrollView, Title } from "./styles";
+import { Container, HeaderContainer, MenuButton, ScrollContainer, TagButtonsScrollView, Title } from "./styles";
+
 
 const allData: CampoHarmonico[] = camposHarmonicos;
 
 export function Home() {
 
 	const theme = useTheme();
+	const navigation = useNavigation();
 
 	const [maioresSelected, setMaioresSelected] = useState(true);
 	const [menoresSelected, setMenoresSelected] = useState(true);
 	const [sustenidosSelected, setSustenidosSelected] = useState(true);
+	const [data, setData] = useState<CampoHarmonico[]>([]);
 
 	useEffect(loadData, [maioresSelected, menoresSelected, sustenidosSelected]);
 
@@ -37,12 +43,18 @@ export function Home() {
 		setData(campos);
 	}
 
-	const [data, setData] = useState<CampoHarmonico[]>([]);
+	function handleMenuPressed() {
+		navigation.navigate("menu");
+	}
 
 	return (
 		<Container>
-			<Title>Campos{"\n"}harmônicos</Title>
-
+			<HeaderContainer>
+				<Title>Campos{"\n"}harmônicos</Title>
+				<MenuButton onPress={handleMenuPressed}>
+					<Feather name="menu" size={32} color={transparentize(.1, theme.colors.text)} />
+				</MenuButton>
+			</HeaderContainer>
 			<ScrollContainer>
 				<TagButtonsScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingLeft: theme.paddings.horizontal }}>
 					<TagButton title="maiores" selected={maioresSelected} onPress={() => handleTagPress("maiores")} />

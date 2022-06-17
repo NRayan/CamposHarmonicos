@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "CamposHarmonicos",
+    "name": "Campos Harmônicos",
     "slug": "CamposHarmonicos",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,7 +8,7 @@
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splashScreen.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#1B222F"
     },
     "updates": {

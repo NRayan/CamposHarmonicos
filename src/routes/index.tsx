@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { useTheme } from "styled-components/native";
-import { Details, Home } from "../screens";
+import { Details, Home, Menu } from "../screens";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -15,6 +15,7 @@ export function Routes() {
 			<Navigator initialRouteName="home" screenOptions={{ headerShown: false }} >
 				<Screen name="home" component={Home} />
 				<Screen name="details" component={Details} />
+				<Screen name="menu" component={Menu} />
 			</Navigator>
 		</NavigationContainer>
 	);
