@@ -4,4 +4,5 @@ export { HarmonicField } from "./harmonicField";
 export { HarmonicFieldItem } from "./harmonicFieldItem";
 export { TagButton } from "./tagButton";
 export { TagLabel } from "./tagLabel";
+export { InfoModal } from "./infoModal";
 

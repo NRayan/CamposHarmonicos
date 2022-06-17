@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { View } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { Routes } from "./src/routes";
-import { theme } from "./src/theme";
+import { dark,light } from "./src/theme";
 
 export default function App() {
 
@@ -52,7 +52,7 @@ export default function App() {
 
 	return (
 		<View onLayout={onLayoutRootView} style={{ flex: 1 }}>
-			<ThemeProvider theme={theme}>
+			<ThemeProvider theme={dark}>
 				<Routes />
 			</ThemeProvider>
 		</View>

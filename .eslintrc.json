@@ -23,12 +23,18 @@
         "linebreak-style": 0,
         "quotes": [
             "error",
-            "double"
+            "double",
+            {
+                "allowTemplateLiterals": true
+            }
         ],
         "semi": [
             "error",
             "always"
         ],
-        "@typescript-eslint/no-explicit-any": ["off"]
+        "@typescript-eslint/no-explicit-any": [
+            "off"
+        ],
+        "allowTemplateLiterals": true
     }
 }

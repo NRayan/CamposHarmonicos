@@ -25,7 +25,7 @@ padding: 15px ${({ theme }) => theme.paddings.horizontal};
 background-color: ${({ theme }) => transparentize(.95, theme.colors.text)};
 border-top-width:1px;
 border-bottom-width: ${({ showBottomBorder }) => showBottomBorder ? 1 : 0}px;
-border-color: ${({ theme }) => transparentize(.85, theme.colors.text)};
+border-color: ${({ theme }) => transparentize(.9, theme.colors.text)};
 `;
 
 export const ButtonText = styled.Text`
