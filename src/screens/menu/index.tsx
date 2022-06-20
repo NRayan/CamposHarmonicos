@@ -19,13 +19,6 @@ export function Menu() {
 		setModalVisible(true);
 	}
 
-	function handleToogleThemePress(option: "Dark" | "Light") {
-		if (option === "Dark")
-			theme.name != "Dark" && toogleTheme();
-		else
-			theme.name != "Light" && toogleTheme();
-	}
-
 	return (
 		<Container>
 
@@ -49,12 +42,12 @@ export function Menu() {
 
 			<Title>Tema</Title>
 
-			<Button onPress={() => handleToogleThemePress("Light")}>
+			<Button onPress={() => toogleTheme("Light")}>
 				<Fontisto name={`radio-btn-${theme.name === "Light" ? "active" : "passive"}`} size={22} color={colors.primary} />
 				<ButtonText>Claro</ButtonText>
 			</Button>
 
-			<Button onPress={() => handleToogleThemePress("Dark")} showBottomBorder>
+			<Button onPress={() => toogleTheme("Dark")} showBottomBorder>
 				<Fontisto name={`radio-btn-${theme.name === "Dark" ? "active" : "passive"}`} size={22} color={colors.primary} />
 				<ButtonText>Escuro</ButtonText>
 			</Button>

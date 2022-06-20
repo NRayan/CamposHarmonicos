@@ -1,53 +1,60 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { createContext, ReactNode, useEffect, useState } from "react";
 import { dark, light } from "../theme";
-import { ThemeProps } from "../types/theme";
+import { ThemeProps, ThemeType } from "../types/theme";
 
-type AuthContextData = {
+type ThemeContextData = {
     loading: Boolean;
     theme: ThemeProps;
-    toogleTheme: () => void
+    toogleTheme: (type: ThemeType) => void
 }
 
-type AuthProviderProps = {
+type ThemeProviderProps = {
     children: ReactNode
 }
 
-type ThemeStorage = "Dark" | "Light";
+type ThemeStorage =
+    {
+        theme: ThemeType
+    };
 
-export const ThemeContext = createContext({} as AuthContextData);
+export const ThemeContext = createContext({} as ThemeContextData);
 
-export function ThemeContextProvider({ children }: AuthProviderProps) {
+export function ThemeContextProvider({ children }: ThemeProviderProps) {
 
     const [theme, setTheme] = useState<ThemeProps>({} as ThemeProps);
     const [loading, setLoading] = useState(true);
 
-
     useEffect(() => { loadTheme() }, []);
 
-    async function toogleContextTheme() {
+    async function toogleContextTheme(type: ThemeType) {
         try {
-            if (theme.name === "Dark") {
-                setTheme(light)
-                await AsyncStorage.setItem("USER_THEME", JSON.stringify("Light"));
+            if (theme.name === type) return;
+
+            if (type === "Dark") {
+                setTheme(dark)
+                await AsyncStorage.setItem("USER_THEME", JSON.stringify({ theme: "Dark" } as ThemeStorage));
             }
             else {
-                setTheme(dark)
-                await AsyncStorage.setItem("USER_THEME", JSON.stringify("Dark"));
+                setTheme(light)
+                await AsyncStorage.setItem("USER_THEME", JSON.stringify({ theme: "Light" } as ThemeStorage));
             }
 
+            console.log("saved");
         } catch (error) {
-
+            console.log(error)
         }
     }
 
     async function loadTheme() {
-        const themeSelected = await AsyncStorage.getItem("USER_THEME");
-        
-        if (themeSelected) {
-            setTheme(themeSelected === "Dark" ? dark : light);
+
+        const storage = await AsyncStorage.getItem("USER_THEME");
+
+        if (storage) {
+            const theme = JSON.parse(storage) as ThemeStorage
+            setTheme(theme.theme === "Dark" ? dark : light);
         } else
-            toogleContextTheme();
+            await toogleContextTheme("Dark");
 
         setLoading(false);
     }
