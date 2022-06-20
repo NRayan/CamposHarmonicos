@@ -9,7 +9,7 @@ type TagColorProps =
 export const Container = styled.View`
 flex-direction: row;
 align-items: center;
-border-radius: 10px;
+border-radius: 7px;
 border: 1px solid ${({ theme }) => transparentize(.8, theme.colors.text)};
 padding: 5px 10px;
 margin-right: 10px;

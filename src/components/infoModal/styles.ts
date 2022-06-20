@@ -46,7 +46,7 @@ padding: 10px 15px;
 `;
 
 export const ButtonText = styled.Text`
-color: ${({ theme }) => theme.colors.text};
+color: ${({ theme }) => theme.colors.primaryText};
 font-size: 13px;
 font-family: ${({ theme }) => theme.fonts[600]};
 `;

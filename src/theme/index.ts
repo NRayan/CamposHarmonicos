@@ -2,6 +2,7 @@ import { ThemeDefaults, ThemeProps } from "../types/theme";
 
 const defaultTheme: ThemeDefaults = {
     fieldsColors: {
+        text:"#FFF",
         primary: "#14701D",
         secondary: "#B00623",
         teriary: "#B77716"
@@ -20,18 +21,22 @@ const defaultTheme: ThemeDefaults = {
 
 export const dark: ThemeProps = {
     ...defaultTheme,
+    name:"Dark",
     colors: {
         background: "#1B222F",
         primary: "#1E4DD6",
+        primaryText: "#FFF",
         text: "#FFF"
     },
 }
 
 export const light: ThemeProps = {
     ...defaultTheme,
+    name:"Light",
     colors: {
         background: "#FFF",
         primary: "#1E4DD6",
+        primaryText: "#FFF",
         text: "#1B222F"
     },
 }

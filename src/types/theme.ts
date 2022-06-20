@@ -4,6 +4,7 @@ export type ThemeColors =
         {
             background: string,
             primary: string,
+            primaryText:string,
             text: string
         }
     }
@@ -12,6 +13,7 @@ export type ThemeDefaults =
     {
         fieldsColors:
         {
+            text:string,
             primary: string,
             secondary: string,
             teriary: string
@@ -29,4 +31,4 @@ export type ThemeDefaults =
     }
 
 
-export type ThemeProps = ThemeColors & ThemeDefaults
+export type ThemeProps = { name: "Dark"|"Light" } & ThemeColors & ThemeDefaults

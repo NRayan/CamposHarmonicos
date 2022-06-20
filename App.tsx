@@ -2,9 +2,9 @@ import { Inter_400Regular, Inter_500Medium, Inter_600SemiBold, Inter_700Bold, us
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback, useEffect, useState } from "react";
 import { View } from "react-native";
-import { ThemeProvider } from "styled-components/native";
+import { ThemeContextProvider } from "./src/contexts";
 import { Routes } from "./src/routes";
-import { dark,light } from "./src/theme";
+import { ThemeRender } from "./ThemeRender";
 
 export default function App() {
 
@@ -52,9 +52,11 @@ export default function App() {
 
 	return (
 		<View onLayout={onLayoutRootView} style={{ flex: 1 }}>
-			<ThemeProvider theme={dark}>
-				<Routes />
-			</ThemeProvider>
+			<ThemeContextProvider>
+				<ThemeRender>
+					<Routes/>
+				</ThemeRender>
+			</ThemeContextProvider>
 		</View>
 	);
 }

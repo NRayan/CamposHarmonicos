@@ -32,7 +32,7 @@ align-items: center;
 export const ToneText = styled.Text`
 font-size: 22px;
 font-family: ${({ theme }) => theme.fonts[600]};
-color: ${({ theme }) => theme.colors.text};  
+color: ${({ theme }) => theme.colors.primaryText};  
 `;
 
 export const Chords = styled.Text`

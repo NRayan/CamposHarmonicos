@@ -1,4 +1,4 @@
-import { lighten } from "polished";
+import { darken, lighten } from "polished";
 import { Dimensions } from "react-native";
 import styled from "styled-components/native";
 const width = Dimensions.get("window").width;
@@ -6,7 +6,10 @@ const width = Dimensions.get("window").width;
 export const Container = styled.TouchableOpacity`
     width: ${width / 3}px;
     aspect-ratio: 1;
-    background: ${({ theme }) => lighten(.03, theme.colors.background)};
+    background: ${({ theme }) => theme.name === "Dark" ?
+        lighten(.03, theme.colors.background)
+        :
+        darken(.03, theme.colors.background)};
     border-radius: 10px;
     margin: 10px ${width * 0.05}px;
     justify-content: center;

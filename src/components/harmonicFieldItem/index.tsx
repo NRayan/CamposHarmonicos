@@ -2,7 +2,7 @@ import { Feather } from "@expo/vector-icons";
 import { transparentize } from "polished";
 import React from "react";
 import { useTheme } from "styled-components/native";
-import { Container, Text, TitleContainer, ValueContainer } from "./styles";
+import { Container, Text, TitleContainer, ValueContainer, ValueText } from "./styles";
 
 type Props = {
 	weak?: boolean,
@@ -23,12 +23,12 @@ export function HarmonicFieldItem({ title, value, weak,color }: Props) {
 			</TitleContainer>
 
 			<ValueContainer>
-				<Text>{value}</Text>
+				<ValueText>{value}</ValueText>
 			</ValueContainer>
 
 			{
 				weak &&
-				<Feather size={14} color={transparentize(.5, theme.colors.text)}
+				<Feather size={14} color={transparentize(.2, theme.fieldsColors.text)}
 					name={"chevrons-down"} style={{ position: "absolute", top: 3, right: 3 }} />
 			}
 
