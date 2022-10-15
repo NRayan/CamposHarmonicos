@@ -1,9 +1,11 @@
-import { Feather, Fontisto, SimpleLineIcons } from "@expo/vector-icons";
+import { AntDesign, Feather, Fontisto, SimpleLineIcons } from "@expo/vector-icons";
+import { nativeApplicationVersion } from "expo-application";
+import * as StoreReview from 'expo-store-review';
 import React, { useContext, useState } from "react";
 import { useTheme } from "styled-components/native";
 import { BackButton, InfoModal } from "../../components";
 import { ThemeContext } from "../../contexts";
-import { Button, ButtonText, Container, Title } from "./styles";
+import { Button, ButtonText, Container, Title, VersionText } from "./styles";
 
 export function Menu() {
 
@@ -19,8 +21,14 @@ export function Menu() {
 		setModalVisible(true);
 	}
 
+	async function handleRateAppPress() {
+		if (await StoreReview.hasAction()) {
+			await StoreReview.requestReview();
+		}
+	}
+
 	return (
-		<Container>
+		<Container contentContainerStyle={{ paddingBottom: 100 }}>
 
 			<BackButton title="Menu" applyPadding />
 
@@ -51,6 +59,14 @@ export function Menu() {
 				<Fontisto name={`radio-btn-${theme.name === "Dark" ? "active" : "passive"}`} size={22} color={colors.primary} />
 				<ButtonText>Escuro</ButtonText>
 			</Button>
+
+			<Title>Outros</Title>
+			<Button onPress={handleRateAppPress}>
+				<AntDesign name="staro" size={22} color={colors.primary} />
+				<ButtonText>Avalie o app</ButtonText>
+			</Button>
+
+			<VersionText>v{nativeApplicationVersion}</VersionText>
 
 			<InfoModal visible={modalVisible} infoNumber={modalInfoNumber} onClosePress={() => setModalVisible(false)} />
 

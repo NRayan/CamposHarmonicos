@@ -2,7 +2,7 @@
   "expo": {
     "name": "Campos Harmônicos",
     "slug": "CamposHarmonicos",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -25,7 +25,8 @@
         "foregroundImage": "./assets/adaptive.png",
         "backgroundColor": "#1B222F"
       },
-      "package": "com.nrayan.CamposHarmonicos"
+      "package": "com.nrayan.CamposHarmonicos",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nrayan.CamposHarmonicos"
     },
     "androidStatusBar": {
       "backgroundColor": "#1B222F",

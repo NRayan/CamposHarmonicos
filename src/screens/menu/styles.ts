@@ -6,7 +6,7 @@ type ButtonProps =
         showBottomBorder?: boolean
     }
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
 flex: 1;
 padding: ${({ theme }) => theme.paddings.vertical} 0
 `;
@@ -33,4 +33,12 @@ color: ${({ theme }) => theme.colors.text};
 font-size: 16px;
 font-family: ${({ theme }) => theme.fonts[400]};
 margin-left: 15px;
+`;
+
+export const VersionText = styled.Text`
+color: ${({ theme }) => transparentize(.3,theme.colors.text)};
+font-size: 14px;
+font-family: ${({ theme }) => theme.fonts[400]};
+align-self: flex-end;
+padding: 15px ${({ theme }) => theme.paddings.horizontal};
 `;
