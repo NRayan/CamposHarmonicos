@@ -21,12 +21,13 @@
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 3,
+      "package": "com.nrayan.CamposHarmonicos",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nrayan.CamposHarmonicos",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive.png",
         "backgroundColor": "#1B222F"
-      },
-      "package": "com.nrayan.CamposHarmonicos",
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nrayan.CamposHarmonicos"
+      }     
     },
     "androidStatusBar": {
       "backgroundColor": "#1B222F",
@@ -36,6 +37,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3c3965b6-5432-4b18-8468-a2bfb782ecd0"
+      }
     }
   }
 }

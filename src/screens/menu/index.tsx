@@ -1,6 +1,7 @@
 import { AntDesign, Feather, Fontisto, SimpleLineIcons } from "@expo/vector-icons";
+import * as Application from "expo-application";
 import { nativeApplicationVersion } from "expo-application";
-import * as StoreReview from 'expo-store-review';
+import * as Linking from 'expo-linking';
 import React, { useContext, useState } from "react";
 import { useTheme } from "styled-components/native";
 import { BackButton, InfoModal } from "../../components";
@@ -22,8 +23,11 @@ export function Menu() {
 	}
 
 	async function handleRateAppPress() {
-		if (await StoreReview.hasAction()) {
-			await StoreReview.requestReview();
+		try {
+			const androidPackageName = Application.applicationId;
+			await Linking.openURL(`market://details?id=${androidPackageName}&showAllReviews=true`);
+		} catch (error) {
+
 		}
 	}
 
